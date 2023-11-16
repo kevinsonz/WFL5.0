@@ -7,11 +7,27 @@ const beginRow = 8;
 const endRow = gssSheet.getMaxRows();
 
 // 列
-let fomulaCols = [2,3,4,14,15,16,17,18,19,20,21,22,23];
+const endCol = gssSheet.getMaxColumns();
+const fomulaCols = [2,3,4,14,15,16,17,18,19,20,21,22,23];
 
+// 行列
+const llMatrix = gssSheet.getRange(8,1,endRow,endCol).getValues();
+
+// 空白チェック
+let blankCheck = FALSE;
+for(i=0; i<endCol; i++){
+    if(llMatrix[i][1]=''){
+        blankCheck = TRUE;
+        break;
+    }
+}
+
+// 数式リセット
 function insRows(){
-    for(i=0;i<fomulaCols.length;i++){
-        const llFormula = gssSheet.getRange(8,fomulaCols[i]).getFormula();
-        gssSheet.getRange(8,fomulaCols[i],endRow-beginRow+1,1).setFormula(llFormula);
+    if(blankCheck){
+        for(i=0; i<fomulaCols.length; i++){
+            const llFormula = gssSheet.getRange(8,fomulaCols[i]).getFormula();
+            gssSheet.getRange(8,fomulaCols[i],endRow-beginRow+1,1).setFormula(llFormula);
+        }
     }
 }
