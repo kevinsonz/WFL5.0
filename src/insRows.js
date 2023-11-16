@@ -16,10 +16,12 @@ const runFunc = gssSheet.getRange('C2').getValue();
 
 // 数式リセット
 function insRows(){
-    if(runFlag && runFunc === '数式'){
-        for(i=0; i<fomulaCols.length; i++){
-            const llFormula = gssSheet.getRange(beginRow,fomulaCols[i]).getFormula();
-            gssSheet.getRange(beginRow,fomulaCols[i],endRow-beginRow+1,1).setFormula(llFormula);
+    if(runFlag){
+        if(runFunc === '数式'){
+            for(i=0; i<fomulaCols.length; i++){
+                const llFormula = gssSheet.getRange(beginRow,fomulaCols[i]).getFormula();
+                gssSheet.getRange(beginRow,fomulaCols[i],endRow-beginRow+1,1).setFormula(llFormula);
+            } 
         }
         gssSheet.getRange('A2').setValue(false);
     }
