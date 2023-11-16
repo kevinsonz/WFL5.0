@@ -14,10 +14,10 @@ const fomulaCols = [2,3,4,14,15,16,17,18,19,20,21,22,23];
 const llMatrix = gssSheet.getRange(8,1,endRow,endCol).getValues();
 
 // 空白チェック
-let blankCheck = FALSE;
+let blankCheck = false;
 for(i=0; i<endCol; i++){
     if(llMatrix[i][1]=''){
-        blankCheck = TRUE;
+        blankCheck = true;
         break;
     }
 }
