@@ -10,12 +10,13 @@ const endRow = gssSheet.getMaxRows();
 const endCol = gssSheet.getMaxColumns();
 const fomulaCols = [2,3,4,5,14,15,16,17,18,19,20,21,22,23];
 
-// フラグ
+// 識別
 const runFlag = gssSheet.getRange('A2').getValue();
+const runFunc = gssSheet.getRange('C2').getValue();
 
 // 数式リセット
 function insRows(){
-    if(runFlag){
+    if(runFlag && runFunc === '数式'){
         for(i=0; i<fomulaCols.length; i++){
             const llFormula = gssSheet.getRange(beginRow,fomulaCols[i]).getFormula();
             gssSheet.getRange(beginRow,fomulaCols[i],endRow-beginRow+1,1).setFormula(llFormula);
