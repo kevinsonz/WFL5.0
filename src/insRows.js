@@ -8,7 +8,7 @@ const endRow = gssSheet.getMaxRows();
 
 // 列
 const endCol = gssSheet.getMaxColumns();
-const fomulaCols = [2,3,4,14,15,16,17,18,19,20,21,22,23];
+const fomulaCols = [2,3,4,5,14,15,16,17,18,19,20,21,22,23];
 
 // フラグ
 const runFlag = gssSheet.getRange('A2').getValue();
