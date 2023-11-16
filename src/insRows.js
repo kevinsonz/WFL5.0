@@ -16,7 +16,7 @@ const llMatrix = gssSheet.getRange(8,1,endRow,endCol).getValues();
 // 空白チェック
 let blankCheck = false;
 for(i=0; i<endCol; i++){
-    if(llMatrix[i][1]=''){
+    if(llMatrix[i][1]===''){
         blankCheck = true;
         break;
     }
