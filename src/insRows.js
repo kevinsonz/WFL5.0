@@ -7,8 +7,11 @@ const beginRow = 8;
 const endRow = gssSheet.getMaxRows();
 
 // 列
+let fomulaCols = [2,3,4,14,15,16,17,18,19,20,21,22,23];
 
 function insRows(){
-    const llFormula1 = gssSheet.getRange('B8:D8').getFormulas();
-    gssSheet.getRange('B8:D'+endRow).setFormulas(llFormula1);
+    for(i=0;i<fomulaCols.length;i++){
+        const llFormula = gssSheet.getRange(8,fomulaCols[i]).getFormula();
+        gssSheet.getRange(8,fomulaCols[i],endRow,1).setFormula(llFormula);
+    }
 }
