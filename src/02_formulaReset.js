@@ -1,5 +1,5 @@
 // 列
-const formulaCols = [2,3,4,5,14,15,16,17,18,19,20,21,22,23];
+const formulaCols = [2,3,4,5,14,15,16,17,18,19,20,21,22,23,24,25];
 
 // 識別
 let runFunc = '';
@@ -7,7 +7,7 @@ if(typeData === 'LL'){
     runFunc = gssSheet.getRange('C2').getValue();
 }
 const runFlag1 = (runFunc === '数式');
-const runFlag2 = (endCol === 23);
+const runFlag2 = (endCol === 25);
 
 // 数式リセット
 function formulaReset(){
