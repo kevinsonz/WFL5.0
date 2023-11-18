@@ -1,7 +1,7 @@
 // ファイル・シート
 const gssFile = SpreadsheetApp.getActiveSpreadsheet();
 const gssSheet = gssFile.getActiveSheet();
-const templateSheet = gssFile.getSheetByName('雛型');
+const templateSheet = gssFile.getSheetByName('temp');
 
 // 行
 const beginRow = 8;
