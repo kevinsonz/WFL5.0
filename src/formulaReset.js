@@ -11,9 +11,12 @@ const endCol = gssSheet.getMaxColumns();
 const formulaCols = [2,3,4,5,14,15,16,17,18,19,20,21,22,23];
 
 // 識別
-const typeData = gssSheet.getRange('A1').getValue(); 
-const runFunc = gssSheet.getRange('C2').getValue();
-const runFlag = typeData === 'LL' && runFunc === '数式';
+const typeData = gssSheet.getRange('A1').getValue();
+let runFunc = '';
+if(typeData === 'LL'){
+    runFunc = gssSheet.getRange('C2').getValue();
+}
+const runFlag = runFunc === '数式';
 
 // 数式リセット
 function formulaReset(){
