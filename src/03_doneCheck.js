@@ -25,5 +25,8 @@ function doneCheck(e){
                 }
             }
         }
+        if(runFlug){
+            gssSheet.getRange('C2').setValue('');
+        }
     }
 }
