@@ -4,7 +4,8 @@ const llData = gssSheet.getRange(beginRow,1,endRow-beginRow+1,endCol).getValues(
 // 日ヘッダーエラー行書式設定
 function doneCheck(e){
     const doneFlag = e.value === 'Done';
-    if(doneFlag){
+    const runFlug = runFunc === 'エラー';
+    if(doneFlag || runFlug){
         if(typeData === 'LL'){
             for(i=0;i<(endRow-beginRow+1);i++){
                 if(llData[i][0]===true){
