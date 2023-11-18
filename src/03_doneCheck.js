@@ -1,5 +1,5 @@
 // 行列
-let llData = gssFile.getRange(beginRow,1,endRow-beginRow,endCol).getValues();
+let llData = gssSheet.getRange(beginRow,1,endRow-beginRow,endCol).getValues();
 
 // 日ヘッダーエラー行書式設定
 function doneCheck(){
@@ -8,15 +8,15 @@ function doneCheck(){
             if(llData[i][0]===TRUE){
                 if(llData[i][14]===0){
                     if(llData[i][20]<5){
-                        gssFile.getRange(i+beginRow,1,1,endCol).setBackground('black');
-                        gssFile.getRange(i+beginRow,1,1,endCol).setFontColor('white');
+                        gssSheet.getRange(i+beginRow,1,1,endCol).setBackground('black');
+                        gssSheet.getRange(i+beginRow,1,1,endCol).setFontColor('white');
                     }else if(llData[i][20]>=5){
-                        gssFile.getRange(i+beginRow,1,1,endCol).setBackground('#990000');
-                        gssFile.getRange(i+beginRow,1,1,endCol).setFontColor('white');
+                        gssSheet.getRange(i+beginRow,1,1,endCol).setBackground('#990000');
+                        gssSheet.getRange(i+beginRow,1,1,endCol).setFontColor('white');
                     }
                 }else if(llData[i][14]===1){
-                    gssFile.getRange(i+beginRow,1,1,endCol).setBackground('red');
-                    gssFile.getRange(i+beginRow,1,1,endCol).setFontColor('white');
+                    gssSheet.getRange(i+beginRow,1,1,endCol).setBackground('red');
+                    gssSheet.getRange(i+beginRow,1,1,endCol).setFontColor('white');
                 }
             }
         }
