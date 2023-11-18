@@ -1,5 +1,5 @@
 // 行列
-let llData = gssSheet.getRange(beginRow,1,endRow-beginRow,endCol).getValues();
+let llData = gssSheet.getRange(beginRow,1,endRow-beginRow+1,endCol).getValues();
 
 // 日ヘッダーエラー行書式設定
 function doneCheck(){
