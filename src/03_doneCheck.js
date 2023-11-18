@@ -25,6 +25,14 @@ function doneCheck(e){
                 }
             }
         }
+        const errorCommon = gssSheet.getRange('O2').getValue();
+        if(errorCommon>0){
+            gssSheet.getRange(1,1,1,endCol).setBackground('red');
+            gssSheet.getRange(1,1,1,endCol).setFontColor('white');
+        }else if(errorCommon===0){
+            gssSheet.getRange(1,1,1,endCol).setBackground('white');
+            gssSheet.getRange(1,1,1,endCol).setFontColor('black');
+        }
         if(runFlug){
             gssSheet.getRange('C2').setValue('');
         }
