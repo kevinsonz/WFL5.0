@@ -21,15 +21,11 @@ const runFlag = (runFunc === '数式');
 
 // 数式リセット
 function formulaReset(){
-    const llFormula = templateSheet.getRange(beginRow,2).getFormula();
-    console.log('llFormula', llFormula);
     if(runFlag){
-        /**
         for(i=0; i<formulaCols.length; i++){
             const llFormula = templateSheet.getRange(beginRow,formulaCols[i]).getFormula();
             gssSheet.getRange(beginRow,formulaCols[i],endRow-beginRow+1,1).setFormula(llFormula);
         }
-        */
         gssSheet.getRange('C2').setValue(''); 
     }
 }
