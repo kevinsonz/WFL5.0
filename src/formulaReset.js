@@ -20,7 +20,7 @@ function formulaReset(){
     if(runFlag){
         for(i=0; i<formulaCols.length; i++){
             const llFormula = gssSheet.getRange(beginRow,formulaCols[i]).getFormula();
-            gssSheet.getRange(beginRow,fomulaCols[i],endRow-beginRow+1,1).setFormula(llFormula);
+            gssSheet.getRange(beginRow,formulaCols[i],endRow-beginRow+1,1).setFormula(llFormula);
         } 
     }
     gssSheet.getRange('C2').setValue('');
