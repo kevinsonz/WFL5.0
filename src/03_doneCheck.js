@@ -1,3 +1,6 @@
+// 行列
+let llData = gssFile.getRange(beginRow,1,endRow-beginRow+1,endCol).getValues();
+
 // 日ヘッダーエラー行書式設定
 function doneCheck(){
     if(typeData === 'LL'){
