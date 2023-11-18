@@ -17,14 +17,17 @@ let runFunc = '';
 if(typeData === 'LL'){
     runFunc = gssSheet.getRange('C2').getValue();
 }
-const runFlag = (runFunc === '数式') && (endCol === 23);
+const runFlag1 = (runFunc === '数式');
+const runFlag2 = (endCol === 23);
 
 // 数式リセット
 function formulaReset(){
-    if(runFlag){
-        for(i=0; i<formulaCols.length; i++){
-            const llFormula = templateSheet.getRange(beginRow,formulaCols[i]).getFormula();
-            gssSheet.getRange(beginRow,formulaCols[i],endRow-beginRow+1,1).setFormula(llFormula);
+    if(runFlag1){
+        if(runFlag2){
+            for(i=0; i<formulaCols.length; i++){
+                const llFormula = templateSheet.getRange(beginRow,formulaCols[i]).getFormula();
+                gssSheet.getRange(beginRow,formulaCols[i],endRow-beginRow+1,1).setFormula(llFormula);
+            }   
         }
         gssSheet.getRange('C2').setValue(''); 
     }
