@@ -5,7 +5,7 @@ const llData = gssSheet.getRange(beginRow,1,endRow-beginRow+1,endCol).getValues(
 function doneCheck(){
     if(typeData === 'LL'){
         for(i=0;(endRow-beginRow+1)<0;i++){
-            if(llData[i][0]===TRUE){
+            if(llData[i][0]===true){
                 if(llData[i][14]===0){
                     if(llData[i][20]<5){
                         gssSheet.getRange(i+beginRow,1,1,endCol).setBackground('black');
