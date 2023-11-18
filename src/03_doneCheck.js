@@ -1,6 +1,5 @@
 // 行列
-let llData = [];
-llData = gssFile.getRange(beginRow,1,endRow,endCol).getValues();
+let llData = gssFile.getRange(beginRow,1,endRow,endCol).getValues();
 
 // 日ヘッダーエラー行書式設定
 function doneCheck(){
