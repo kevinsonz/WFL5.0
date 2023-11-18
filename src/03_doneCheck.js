@@ -19,7 +19,7 @@ function doneCheck(e){
                     }else if(llData[i][15]===1){
                         gssSheet.getRange(i+beginRow,1,1,endCol).setBackground('red');
                         gssSheet.getRange(i+beginRow,1,1,endCol).setFontColor('white');
-                        gssSheet.getRange(i+beginRow,6).setValue('');
+                        gssSheet.getRange(i+beginRow,7).setValue('');
                     }
                 }
             }
