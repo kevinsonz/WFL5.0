@@ -25,7 +25,3 @@ function formulaReset(){
     }
     gssSheet.getRange('A2').setValue(false);
 }
-
-function onEdit(e){
-    formulaReset();
-}
