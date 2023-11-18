@@ -1,7 +1,10 @@
+// 行列
+let llData = [];
+llData = gssFile.getRange(beginRow,1,endRow,endCol).getValues();
+
 // 日ヘッダーエラー行書式設定
 function doneCheck(){
     if(typeData === 'LL'){
-        const llData = gssFile.getRange(beginRow,1,endRow,endCol).getValues();
         for(i=0;(endCol-beginRow+1)<0;i++){
             if(llData[i][0]===TRUE){
                 if(llData[i][14]===0){
