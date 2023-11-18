@@ -23,5 +23,5 @@ function formulaReset(){
             gssSheet.getRange(beginRow,fomulaCols[i],endRow-beginRow+1,1).setFormula(llFormula);
         } 
     }
-    gssSheet.getRange('A2').setValue(false);
+    gssSheet.getRange('C2').setValue('');
 }
