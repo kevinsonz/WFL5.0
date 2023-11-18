@@ -21,9 +21,9 @@ const runFlag = (runFunc === '数式');
 
 // 数式リセット
 function formulaReset(){
+    const llFormula = templateSheet.getRange(beginRow,2).getFormula();
+    console.log('llFormula', llFormula);
     if(runFlag){
-        const llFormula = templateSheet.getRange(beginRow,2).getFormula();
-        console.log('llFormula', llFormula);
         /**
         for(i=0; i<formulaCols.length; i++){
             const llFormula = templateSheet.getRange(beginRow,formulaCols[i]).getFormula();
