@@ -16,7 +16,7 @@ let runFunc = '';
 if(typeData === 'LL'){
     runFunc = gssSheet.getRange('C2').getValue();
 }
-const runFlag = runFunc === '数式';
+const runFlag = typeData === 'LL' && runFunc === '数式';
 
 // 数式リセット
 function formulaReset(){
