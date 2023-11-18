@@ -16,7 +16,7 @@ let runFunc = '';
 if(typeData === 'LL'){
     runFunc = gssSheet.getRange('C2').getValue();
 }
-const runFlag = typeData === 'LL' && runFunc === '数式';
+const runFlag = (runFunc === '数式');
 
 // 数式リセット
 function formulaReset(){
@@ -24,7 +24,7 @@ function formulaReset(){
         for(i=0; i<formulaCols.length; i++){
             const llFormula = gssSheet.getRange(beginRow,formulaCols[i]).getFormula();
             gssSheet.getRange(beginRow,formulaCols[i],endRow-beginRow+1,1).setFormula(llFormula);
-        } 
+        }
+        gssSheet.getRange('C2').setValue(''); 
     }
-    gssSheet.getRange('C2').setValue('');
 }
