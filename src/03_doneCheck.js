@@ -1,5 +1,5 @@
 // 行列
-llData = gssFile.getRange(beginRow,1,endRow,endCol).getValues();
+const llData = gssFile.getRange(beginRow,1,endRow,endCol).getValues();
 
 // 日ヘッダーエラー行書式設定
 function doneCheck(){
