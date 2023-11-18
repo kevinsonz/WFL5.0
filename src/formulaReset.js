@@ -1,6 +1,7 @@
 // ファイル・シート
 const gssFile = SpreadsheetApp.getActiveSpreadsheet();
 const gssSheet = gssFile.getActiveSheet();
+const templateSheet = gssFile.getSheetByName("雛型");
 
 // 行
 const beginRow = 8;
@@ -22,7 +23,7 @@ const runFlag = (runFunc === '数式');
 function formulaReset(){
     if(runFlag){
         for(i=0; i<formulaCols.length; i++){
-            const llFormula = gssSheet.getRange(beginRow,formulaCols[i]).getFormula();
+            const llFormula = templateSheet.getRange(beginRow,formulaCols[i]).getFormula();
             gssSheet.getRange(beginRow,formulaCols[i],endRow-beginRow+1,1).setFormula(llFormula);
         }
         gssSheet.getRange('C2').setValue(''); 
