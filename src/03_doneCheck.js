@@ -1,10 +1,10 @@
 // 行列
-let llData = gssSheet.getRange(beginRow,1,endRow-beginRow+1,endCol).getValues();
+const llData = gssSheet.getRange(beginRow,1,endRow-beginRow+1,endCol).getValues();
 
 // 日ヘッダーエラー行書式設定
 function doneCheck(){
     if(typeData === 'LL'){
-        for(i=0;(endCol-beginRow+1)<0;i++){
+        for(i=0;(endRow-beginRow+1)<0;i++){
             if(llData[i][0]===TRUE){
                 if(llData[i][14]===0){
                     if(llData[i][20]<5){
