@@ -21,8 +21,8 @@ function tplInsert(e){
             if(llData[i][12]==='tpl_A'){
                 gssSheet.insertRowsAfter(beginRow+i,tplRows);
                 gssSheet.getRange(beginRow+i+1,1,tplRows,25).setValues(tplTargetData);
-                gssSheet.deleteRows(beginRow+i,tplRows+1);
             }
         }
+        gssSheet.deleteRows(beginRow+i,tplRows+1);
     }
 }
