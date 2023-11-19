@@ -7,10 +7,10 @@ function formulaReset(call,addRows){
             addRows = 0;
         }else if(call === 'call'){
             addRows = addRows;
-            for(let i=0; i<formulaCols.length; i++){
-                const llFormula = templateSheet.getRange(beginRow,formulaCols[i]).getFormula();
-                gssSheet.getRange(beginRow,formulaCols[i],endRow-beginRow+1+addRows,1).setFormula(llFormula);
-            }
+        }
+        for(let i=0; i<formulaCols.length; i++){
+            const llFormula = templateSheet.getRange(beginRow,formulaCols[i]).getFormula();
+            gssSheet.getRange(beginRow,formulaCols[i],endRow-beginRow+1+addRows,1).setFormula(llFormula);
         }
         gssSheet.getRange('C2').setValue(''); 
     }
