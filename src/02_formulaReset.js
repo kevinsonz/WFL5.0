@@ -5,13 +5,13 @@ function formulaReset(call,addRows){
     if(runFlag){
         if(call !== 'call'){
             addRows = 0;
-        }else if(call === 'call'){
+        }else{
             addRows = addRows;
         }
         for(let i=0; i<formulaCols.length; i++){
             const llFormula = templateSheet.getRange(beginRow,formulaCols[i]).getFormula();
             gssSheet.getRange(beginRow,formulaCols[i],endRow-beginRow+1+addRows,1).setFormula(llFormula);
         }
-        gssSheet.getRange('C2').setValue(''); 
+        gssSheet.getRange('C2').setValue('');
     }
 }
