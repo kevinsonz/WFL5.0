@@ -25,7 +25,9 @@ function tplInsert(e){
             }
         }
         gssSheet.getRange(insFlagRow,13,tplRows+1,1).setValue('');
-        formulaReset('call',tplRows);
-        formatReset('call',tplRows);
+        llData = gssSheet.getRange(beginRow,1,endRow-beginRow+1,endCol).getValues();
+        bgData = gssSheet.getRange(beginRow,1,endRow-beginRow+1,endCol).getBackgrounds();
+        formulaReset('call');
+        formatReset('call');
     }
 }

@@ -1,5 +1,5 @@
 // 数式リセット
-function formulaReset(call,addRows){
+function formulaReset(call){
     const formulaCols = [2,3,4,5,14,15,16,17,18,19,20,21,22,23,24,25];
     const runFlag = ((runFunc === '数式') || (call === 'call')) && isLL && okCol;
     if(runFlag){

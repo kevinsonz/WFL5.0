@@ -1,4 +1,4 @@
-// 行列
+// 行列（データ）
 let llData = gssSheet.getRange(beginRow,1,endRow-beginRow+1,endCol).getValues();
 
 // 日ヘッダーエラー行書式設定
