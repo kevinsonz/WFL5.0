@@ -25,8 +25,8 @@ function tplInsert(e){
             }
         }
         gssSheet.getRange(insFlagRow,13,tplRows+1,1).setValue('');
-        llData = gssSheet.getRange(beginRow,1,endRow-beginRow+1,endCol).getValues();
-        bgData = gssSheet.getRange(beginRow,1,endRow-beginRow+1,endCol).getBackgrounds();
+        llData = gssSheet.getRange(beginRow,1,endRow-beginRow+1+tplRows,endCol).getValues();
+        bgData = gssSheet.getRange(beginRow,1,endRow-beginRow+1+tplRows,endCol).getBackgrounds();
         formulaReset('call');
         formatReset('call');
     }

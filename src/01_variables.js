@@ -10,6 +10,10 @@ const endRow = gssSheet.getMaxRows();
 // 列
 const endCol = gssSheet.getMaxColumns();
 
+// 行列
+let llData = gssSheet.getRange(beginRow,1,endRow-beginRow+1,endCol).getValues();
+let bgData = gssSheet.getRange(beginRow,1,endRow-beginRow+1,endCol).getBackgrounds();
+
 // 識別
 const typeData = gssSheet.getRange('A1').getValue();
 let runFunc = '';

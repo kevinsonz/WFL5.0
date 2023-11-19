@@ -1,6 +1,3 @@
-// 行列（背景色）
-let bgData = gssSheet.getRange(beginRow,1,endRow-beginRow+1,endCol).getBackgrounds();
-
 // 書式リセット
 function formatReset(call){
     const runFlag = ((runFunc === '書式') || (call === 'call')) && isLL && okCol;
