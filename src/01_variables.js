@@ -12,3 +12,9 @@ const endCol = gssSheet.getMaxColumns();
 
 // 識別
 const typeData = gssSheet.getRange('A1').getValue();
+let runFunc = '';
+const isLL = typeData === 'LL'
+if(isLL){
+    runFunc = gssSheet.getRange('C2').getValue();
+}
+const okCol = (endCol === 25);
