@@ -5,10 +5,12 @@ function formulaReset(call,addRows){
     if(runFlag){
         if(call !== 'call'){
             addRows = 0;
-        }
-        for(let i=0; i<formulaCols.length; i++){
-            const llFormula = templateSheet.getRange(beginRow,formulaCols[i]).getFormula();
-            gssSheet.getRange(beginRow,formulaCols[i],endRow-beginRow+1+addRows,1).setFormula(llFormula);
+        }else if(call === 'call'){
+            addRows = addRows;
+            for(let i=0; i<formulaCols.length; i++){
+                const llFormula = templateSheet.getRange(beginRow,formulaCols[i]).getFormula();
+                gssSheet.getRange(beginRow,formulaCols[i],endRow-beginRow+1+addRows,1).setFormula(llFormula);
+            }
         }
         gssSheet.getRange('C2').setValue(''); 
     }
