@@ -1,5 +1,5 @@
 // 行列
-let bgData = gssSheet.getRange(beginRow,1,endRow-beginRow+1+addRows,endCol).getBackgrounds();
+let bgData = gssSheet.getRange(beginRow,1,endRow-beginRow+1,endCol).getBackgrounds();
 
 // 書式リセット
 function formatReset(call,addRows){
