@@ -24,4 +24,5 @@ if(isLL){
 const okCol = (endCol === 25);
 
 // その他
+let call = '';
 let addRows = 0;
