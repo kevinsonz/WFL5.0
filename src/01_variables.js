@@ -22,3 +22,6 @@ if(isLL){
     runFunc = gssSheet.getRange('C2').getValue();
 }
 const okCol = (endCol === 25);
+
+// その他
+let addRows = 0;
