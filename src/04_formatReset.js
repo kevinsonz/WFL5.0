@@ -8,5 +8,6 @@ function formatReset(call){
                 gssSheet.getRange(i+beginRow,1,1,endCol).setFontColor('black');
             }
         }
+        gssSheet.getRange('C2').setValue(''); 
     }
 }
