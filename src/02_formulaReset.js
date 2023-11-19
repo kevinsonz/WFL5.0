@@ -5,7 +5,7 @@ function formulaReset(call){
     if(runFlag){
         for(let i=0; i<formulaCols.length; i++){
             const llFormula = templateSheet.getRange(beginRow,formulaCols[i]).getFormula();
-            gssSheet.getRange(beginRow,formulaCols[i],endRow-beginRow+1+addRows,1).setFormula(llFormula);
+            gssSheet.getRange(beginRow,formulaCols[i],endRow-beginRow+1,1).setFormula(llFormula);
         }
         gssSheet.getRange('C2').setValue(''); 
     }
