@@ -25,6 +25,6 @@ function tplInsert(e){
                 insRow = insFlagRow+1;
             }
         }
-        gssSheet.deleteRows(insFlagRow,tplRows+1);
+        gssSheet.getRange(insFlagRow,13,tplRows+1,1).setValues('');
     }
 }
