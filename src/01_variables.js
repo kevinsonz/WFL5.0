@@ -11,8 +11,8 @@ const endRow = gssSheet.getMaxRows();
 const endCol = gssSheet.getMaxColumns();
 
 // 行列
-let llData = gssSheet.getRange(beginRow,1,endRow-beginRow+1,endCol).getValues();
-let bgData = gssSheet.getRange(beginRow,1,endRow-beginRow+1,endCol).getBackgrounds();
+let llData = [];
+let bgData = [];
 
 // 識別
 const typeData = gssSheet.getRange('A1').getValue();

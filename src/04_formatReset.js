@@ -1,5 +1,6 @@
 // 書式リセット
 function formatReset(call){
+    bgData = gssSheet.getRange(beginRow,1,endRow-beginRow+1,endCol).getBackgrounds();
     const runFlag = ((runFunc === '書式') || (call === 'call')) && isLL && okCol;
     if(runFlag){
         for(let i=0;i<(endRow-beginRow+1);i++){
