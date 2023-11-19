@@ -4,6 +4,9 @@ function formulaReset(call,addRows){
     const runFlag = (runFunc === '数式') && isLL && okCol;
     const callFlag = (call === 'call') && isLL && okCol;
     if(runFlag || callFlag){
+        if(call !== 'call'){
+            addRows = 0;
+        }
         for(let i=0; i<formulaCols.length; i++){
             const llFormula = templateSheet.getRange(beginRow,formulaCols[i]).getFormula();
             gssSheet.getRange(beginRow,formulaCols[i],endRow-beginRow+1+addRows,1).setFormula(llFormula);
