@@ -14,12 +14,13 @@ function tplInsert(e){
         for(let i=0;i<(tplEndRow-beginRow+1);i++){
             if(tplData[i][12]==='tpl_A'){
                 tplTargetData.push(tplData[i]);
-                tplRows + 1;
+                tplRows = tplRows + 1;
             }
         }
         for(let i=0;i<(endRow-beginRow+1);i++){
             if(llData[i][12]==='tpl_A'){
-                gssSheet.insertRowsAfter(beginRow+i+1,tplRows);
+                gssSheet.insertRowsAfter(beginRow+i,tplRows);
+                gssSheet.getRange(beginRow+i+1,1).setValues(tplTargetData);
             }
         }
     }
