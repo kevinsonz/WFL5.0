@@ -7,7 +7,7 @@ function doneCheck(e){
     const doneFlag = (e.value === 'Done') && isLL;
     const runFlaug = (runFunc === 'エラー') && isLL;
     if(doneFlag || runFlag){
-        for(i=0;i<(endRow-beginRow+1);i++){
+        for(let i=0;i<(endRow-beginRow+1);i++){
             if(llData[i][0]===true){
                 if(llData[i][15]===0){
                     if(llData[i][22]<5){
