@@ -1,3 +1,7 @@
+// 行列
+let bgData = gssSheet.getRange(beginRow,1,endRow-beginRow+1+addRows,endCol).getBackgrounds();
+
+// 書式リセット
 function formatReset(call,addRows){
     const runFlag = ((runFunc === '書式') || (call === 'call')) && isLL && okCol;
     if(runFlag){
