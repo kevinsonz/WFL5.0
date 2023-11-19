@@ -4,16 +4,13 @@ const tplData = templateSheet.getRange(beginRow,1,tplEndRow-beginRow+1,endCol).g
 
 function tplInsert(e){
     const tplNamesSheet = gssFile.getSheetByName('tplNames');
-    const tplNames = tplNamesSheet.getRange('A:A').getValues();
-    /**
-    const tplDataCheck = e.value === 
-    const tplRangeCheck = e.range
-    const tplFlag =  tplDataCheck && tplRangeCheck;
-    let tplRows = '';
-    if(runFlug){
+    const tplNames = tplNamesSheet.getRange('A1:A').getValues().flat();
+    const tplDataCheck = tplNames.includes(e.Value);
+    const runFlag =  tplDataCheck && typeData === 'LL';
+    let tplTargetData = [];
+    if(runFlag){
         for(i=0;i<(tplEndRow-beginRow+1);i++){
-            
+            tplTargetData.push(tplData[i]);
         }
     }
-    */
 }
