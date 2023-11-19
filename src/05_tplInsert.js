@@ -3,6 +3,7 @@ const tplEndRow = templateSheet.getMaxRows();
 const tplData = templateSheet.getRange(beginRow,1,tplEndRow-beginRow+1,endCol).getValues();
 
 function tplInsert(e){
+    llData = gssSheet.getRange(beginRow,1,endRow-beginRow+1,endCol).getValues();
     const tplNamesSheet = gssFile.getSheetByName('tplNames');
     const tplNames = tplNamesSheet.getRange('A1:A').getValues().flat();
     const tplDataCheck = tplNames.includes(e.value);
