@@ -1,6 +1,7 @@
 function formatReset(call){
     const runFlag = ((runFunc === '書式') || (call === 'call')) && isLL && okCol;
     if(runFlag){
+        llData = gssSheet.getRange(beginRow,1,endRow-beginRow+1,endCol).getValues();
         bgData = gssSheet.getRange(beginRow,1,endRow-beginRow+1,endCol).getBackgrounds();
         for(let i=0;i<(endRow-beginRow+1);i++){
             if((llData[i][0]===false) && bgData[i][0]!=='white'){
