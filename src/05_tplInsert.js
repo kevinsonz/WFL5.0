@@ -26,7 +26,7 @@ function tplInsert(e){
             }
         }
         gssSheet.getRange(insFlagRow,13,tplRows+1,1).setValue('');
-        formulaReset('call');
-        formatReset('call');
+        formulaReset('call',tplRows);
+        formatReset('call',tplRows);
     }
 }
