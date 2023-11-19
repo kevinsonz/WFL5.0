@@ -5,7 +5,7 @@ const llData = gssSheet.getRange(beginRow,1,endRow-beginRow+1,endCol).getValues(
 function doneCheck(e){
     const isLL = typeData === 'LL'
     const doneFlag = (e.value === 'Done') && isLL;
-    const runFlaug = (runFunc === 'エラー') && isLL;
+    const runFlag = (runFunc === 'エラー') && isLL;
     if(doneFlag || runFlag){
         for(let i=0;i<(endRow-beginRow+1);i++){
             if(llData[i][0]===true){
