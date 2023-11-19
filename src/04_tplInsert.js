@@ -17,12 +17,12 @@ function tplInsert(e){
                 tplRows = tplRows + 1;
             }
         }
-        let insFlagRow = beginRow;
+        let insFlagRow = 0;
         for(let i=0;i<(endRow-beginRow+1);i++){
             if(llData[i][12]==='tpl_A'){
                 gssSheet.insertRowsAfter(beginRow+i,tplRows);
                 gssSheet.getRange(beginRow+i+1,1,tplRows,25).setValues(tplTargetData);
-                insFlagRow = insFlagRow+1;
+                insFlagRow = (beginRow+i);
             }
         }
         gssSheet.getRange(insFlagRow,13,tplRows+1,1).setValue('');
