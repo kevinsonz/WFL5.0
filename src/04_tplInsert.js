@@ -22,7 +22,7 @@ function tplInsert(e){
             if(llData[i][12]==='tpl_A'){
                 gssSheet.insertRowsAfter(beginRow+i,tplRows);
                 gssSheet.getRange(beginRow+i+1,1,tplRows,25).setValues(tplTargetData);
-                insRow = insFlagRow+1;
+                insFlagRow = insFlagRow+1;
             }
         }
         gssSheet.getRange(insFlagRow,13,tplRows+1,1).setValues('');
