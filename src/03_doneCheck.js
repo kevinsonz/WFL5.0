@@ -1,6 +1,6 @@
 // 日ヘッダーエラー行書式設定
 function doneCheck(e){
-    llData = gssSheet.getRange(beginRow,1,endRow-beginRow+1,endCol).getValues();
+    llData = llSheet.getRange(beginRow,1,endRow-beginRow+1,endCol).getValues();
     const doneFlag = ((e.value === 'Done') || (e === 'call')) && isLL && okCol;
     const runFlag = (runFunc === 'エラー') && isLL && okCol;
     if(doneFlag || runFlag){
@@ -8,29 +8,29 @@ function doneCheck(e){
             if(llData[i][0]===true){
                 if(llData[i][15]===0){
                     if(llData[i][22]<5){
-                        gssSheet.getRange(i+beginRow,1,1,endCol).setBackground('black');
-                        gssSheet.getRange(i+beginRow,1,1,endCol).setFontColor('white');
+                        llSheet.getRange(i+beginRow,1,1,endCol).setBackground('black');
+                        llSheet.getRange(i+beginRow,1,1,endCol).setFontColor('white');
                     }else if(llData[i][22]>=5){
-                        gssSheet.getRange(i+beginRow,1,1,endCol).setBackground('#990000');
-                        gssSheet.getRange(i+beginRow,1,1,endCol).setFontColor('white');
+                        llSheet.getRange(i+beginRow,1,1,endCol).setBackground('#990000');
+                        llSheet.getRange(i+beginRow,1,1,endCol).setFontColor('white');
                     }
                 }else if(llData[i][15]===1){
-                    gssSheet.getRange(i+beginRow,1,1,endCol).setBackground('red');
-                    gssSheet.getRange(i+beginRow,1,1,endCol).setFontColor('white');
-                    gssSheet.getRange(i+beginRow,7).setValue('');
+                    llSheet.getRange(i+beginRow,1,1,endCol).setBackground('red');
+                    llSheet.getRange(i+beginRow,1,1,endCol).setFontColor('white');
+                    llSheet.getRange(i+beginRow,7).setValue('');
                 }
             }
         }
-        const errorCommon = gssSheet.getRange('O2').getValue();
+        const errorCommon = llSheet.getRange('O2').getValue();
         if(errorCommon>0){
-            gssSheet.getRange(1,1,1,endCol).setBackground('red');
-            gssSheet.getRange(1,1,1,endCol).setFontColor('white');
+            llSheet.getRange(1,1,1,endCol).setBackground('red');
+            llSheet.getRange(1,1,1,endCol).setFontColor('white');
         }else if(errorCommon===0){
-            gssSheet.getRange(1,1,1,endCol).setBackground('white');
-            gssSheet.getRange(1,1,1,endCol).setFontColor('black');
+            llSheet.getRange(1,1,1,endCol).setBackground('white');
+            llSheet.getRange(1,1,1,endCol).setFontColor('black');
         }
         if(runFlag){
-            gssSheet.getRange('C2').setValue('');
+            llSheet.getRange('C2').setValue('');
         }
     }
 }

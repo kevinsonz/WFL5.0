@@ -3,7 +3,7 @@ const tplEndRow = templateSheet.getMaxRows();
 const tplData = templateSheet.getRange(beginRow,1,tplEndRow-beginRow+1,endCol).getValues();
 
 function tplInsert(e){
-    llData = gssSheet.getRange(beginRow,1,endRow-beginRow+1,endCol).getValues();
+    llData = llSheet.getRange(beginRow,1,endRow-beginRow+1,endCol).getValues();
     const tplNamesSheet = gssFile.getSheetByName('tplNames');
     const tplNames = tplNamesSheet.getRange('A1:A').getValues().flat();
     const tplDataCheck = tplNames.includes(e.value);
@@ -20,12 +20,12 @@ function tplInsert(e){
         let insFlagRow = 0;
         for(let i=0;i<(endRow-beginRow+1);i++){
             if(llData[i][12]===e.value){
-                gssSheet.insertRowsAfter(beginRow+i,tplRows);
-                gssSheet.getRange(beginRow+i+1,1,tplRows,25).setValues(tplTargetData);
+                llSheet.insertRowsAfter(beginRow+i,tplRows);
+                llSheet.getRange(beginRow+i+1,1,tplRows,25).setValues(tplTargetData);
                 insFlagRow = (beginRow+i);
             }
         }
-        gssSheet.getRange(insFlagRow,13,tplRows+1,1).setValue('');
+        llSheet.getRange(insFlagRow,13,tplRows+1,1).setValue('');
         formulaReset('call',tplRows);
         formatReset('call',tplRows);
     }
