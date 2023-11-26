@@ -6,6 +6,6 @@ function bkLog(){
         bkSheet.deleteRows(2,endBkRow-1);
     }
     bkSheet.getRange('A1:Y1').clearContent();
-    bkSheet.insertRowsAfter(1,endRows-beginRow);
-    // llSheet.getRange(llDataRange).copyTo(bkSheet);
+    bkSheet.insertRowsAfter(1,endRow-beginRow);
+    llSheet.getRange(llDataRange).copyTo(bkSheet);
 }
