@@ -8,5 +8,5 @@ function bkLog(){
     }
     bkSheet.getRange('A1:Y1').clearContent();
     bkSheet.insertRowsAfter(1,endRow-beginRow);
-    llSheet.getRange(llDataRange).copyTo(bkPasteRange);
+    llDataRange.copyTo(bkPasteRange);
 }
