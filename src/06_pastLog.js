@@ -6,7 +6,7 @@ function bkLog(){
     if(endBkRow>1){
         bkSheet.deleteRows(2,endBkRow-1);
     }
-    bkSheet.getRange('A1:Y1').clearContent();
+    bkSheet.getRange('A1:Y1').clear();
     bkSheet.insertRowsAfter(1,endRow-beginRow);
     llDataRange.copyTo(bkPasteRange,{contentsOnly:true});
 }
