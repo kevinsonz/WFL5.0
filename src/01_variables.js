@@ -11,8 +11,10 @@ const endRow = llSheet.getMaxRows();
 const endCol = llSheet.getMaxColumns();
 
 // 行列
+const llDataRange = llSheet.getRange(beginRow,1,endRow-beginRow+1,endCol);
 let llData = [];
 let bgData = [];
+llData = llDataRange.getValues();
 
 // 識別
 const typeData = llSheet.getRange('A1').getValue();

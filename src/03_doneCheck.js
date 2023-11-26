@@ -1,6 +1,5 @@
 // 日ヘッダーエラー行書式設定
 function doneCheck(e){
-    llData = llSheet.getRange(beginRow,1,endRow-beginRow+1,endCol).getValues();
     const doneFlag = ((e.value === 'Done') || (e === 'call')) && isLL && okCol;
     const runFlag = (runFunc === 'エラー') && isLL && okCol;
     if(doneFlag || runFlag){

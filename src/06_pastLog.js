@@ -1,5 +1,7 @@
 const bkSheet = gssFile.getSheetByName('bkLog');
 
 function bkLog(){
-    bkSheet.getRange('A1').setValues(llData);
+    const endBkRow = bkSheet.getMaxRows();
+    bkSheet.deleteRows(2,endBkRow-1);
+    // llSheet.getRange(llDataRange).copyTo(bkSheet);
 }
