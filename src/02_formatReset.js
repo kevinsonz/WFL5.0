@@ -1,4 +1,5 @@
 // 書式リセット
+
 function formatReset(call,addRows){
     const runFlag = (runFunc === '書式') && isLL && okCol;
     const callFlag = (call === 'call') && isLL && okCol;

@@ -1,3 +1,5 @@
+// テンプレート挿入
+
 // 行列
 const tplEndRow = templateSheet.getMaxRows();
 const tplData = templateSheet.getRange(beginRow,1,tplEndRow-beginRow+1,endCol).getValues();

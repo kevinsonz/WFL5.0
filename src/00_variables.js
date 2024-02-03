@@ -1,3 +1,5 @@
+// 変数まとめ
+
 // ファイル・シート
 const gssFile = SpreadsheetApp.getActiveSpreadsheet();
 const gssSheet = gssFile.getActiveSheet();
