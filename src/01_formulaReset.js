@@ -10,7 +10,7 @@ function formulaReset(call,addRows){
         }
         for(let i=0; i<formulaCols.length; i++){
             const llFormula = templateSheet.getRange(beginRow_LL,formulaCols[i]).getFormula();
-            wflSheet.getRange(beginRow_LL,formulaCols[i],endRow-beginRow_LL+1+addRows,1).setFormula(llFormula);
+            wflSheet.getRange(beginRow_LL,formulaCols[i],endRow_LL-beginRow_LL+1+addRows,1).setFormula(llFormula);
         }
         wflSheet.getRange(runCell).setValue('');
     }
