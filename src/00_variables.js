@@ -1,26 +1,29 @@
 // 変数まとめ
 
 // ファイル・シート
-const gssFile = SpreadsheetApp.getActiveSpreadsheet();
-const gssSheet = gssFile.getActiveSheet();
-const templateSheet = gssFile.getSheetByName('template');
+const wflFile = SpreadsheetApp.getActiveSpreadsheet();
+const wflSheet = wflFile.getActiveSheet();
+const templateSheet = wflFile.getSheetByName('Template');
 
 // 行
-const beginRow = 8;
-const endRow = gssSheet.getMaxRows();
+const beginRow_LL = 9;
+const endRow = wflSheet.getMaxRows();
 
 // 列
-const endCol = gssSheet.getMaxColumns();
+const endCol = wflSheet.getMaxColumns();
+
+// セル
+const runCell = 'D3';
 
 // 行列
 let llData = [];
 let bgData = [];
 
 // 識別
-const typeData = gssSheet.getRange('A1').getValue();
+const typeData = wflSheet.getRange('B2').getValue();
 let runFunc = '';
 const isLL = typeData === 'LL'
 if(isLL){
-    runFunc = gssSheet.getRange('C2').getValue();
+    runFunc = wflSheet.getRange(runCell).getValue();
 }
-const okCol = (endCol === 25);
+const okCol = (endCol === 26);

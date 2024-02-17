@@ -7,14 +7,14 @@ function formatReset(call,addRows){
         if(call !== 'call'){
             addRows = 0;
         }
-        llData = gssSheet.getRange(beginRow,1,endRow-beginRow+1+addRows,endCol).getValues();
-        bgData = gssSheet.getRange(beginRow,1,endRow-beginRow+1+addRows,endCol).getBackgrounds();    
-        for(let i=0;i<(endRow-beginRow+1+addRows);i++){
+        llData = wflSheet.getRange(beginRow_LL,1,endRow-beginRow_LL+1+addRows,endCol).getValues();
+        bgData = wflSheet.getRange(beginRow_LL,1,endRow-beginRow_LL+1+addRows,endCol).getBackgrounds();    
+        for(let i=0;i<(endRow-beginRow_LL+1+addRows);i++){
             if((llData[i][0]===false) && bgData[i][0]!=='white'){
-                gssSheet.getRange(i+beginRow,1,1,endCol).setBackground('white');
-                gssSheet.getRange(i+beginRow,1,1,endCol).setFontColor('black');
+                wflSheet.getRange(i+beginRow_LL,1,1,endCol).setBackground('white');
+                wflSheet.getRange(i+beginRow_LL,1,1,endCol).setFontColor('black');
             }
         }
-        gssSheet.getRange('C2').setValue(''); 
+        wflSheet.getRange(runCell).setValue(''); 
     }
 }
