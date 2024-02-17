@@ -7,7 +7,7 @@ function tplInsert(e){
     const tplDataCheck = tplNames.includes(e.value);
     const runFlag =  tplDataCheck && typeData === 'LL';
     let tplTargetData = [];
-    const OWFlag = e.Value.slice(0,1) === '*'; // 上書き(OverWrite)フラグ
+    const OWFlag = e.value.slice(0,1) === '*'; // 上書き(OverWrite)フラグ
         if(runFlag){
         let tplRows = 0;
         for(let i=0; i<(endRow_tpl-beginRow_LL+1); i++){
