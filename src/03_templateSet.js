@@ -12,13 +12,14 @@ function tplInsert(e){
         let tplRows = 0;
         for(let i=0; i<(endRow_tpl-beginRow_LL+1); i++){
             if(tplData[i][13]===e.value){
-                tplTargetData.push(tplData[i]); // 該当するテンプレを配列に追加
-                tplRows = tplRows + 1; // 該当するテンプレの行数をカウント
                 if(OWFlag){
                     for(let j=6; j<13; j++){
                         tplTargetData.push(tplData[i][j]);
-                    }break;
-                } // 上書き属性の場合は1行目のみとして次の処理へ進む
+                    }break; // 上書き属性の場合は1行目のみとして次の処理へ進む
+                }else{
+                    tplTargetData.push(tplData[i]); // 該当するテンプレを配列に追加
+                    tplRows = tplRows + 1; // 該当するテンプレの行数をカウント
+                }
             }
         }
         let insFlagRow = 0;
