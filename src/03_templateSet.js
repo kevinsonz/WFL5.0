@@ -7,7 +7,7 @@ function tplInsert(e){
     const tplDataCheck = tplNames.includes(e.value);
     const runFlag =  tplDataCheck && typeData === 'LL';
     let tplTargetData = [];
-    const owFlag = e.slice(0,1) === '*'; // 上書き(OverWrite)フラグ
+    const owFlag = e.slice(0,1) === '_'; // 上書き(OverWrite)フラグ
         if(runFlag){
         let tplRows = 0;
         for(let i=0; i<(endRow_tpl-beginRow_LL+1); i++){
@@ -18,7 +18,7 @@ function tplInsert(e){
                     }
                     tplRows = tplRows + 1; // 該当するテンプレの行数をカウント
                     break; // 上書き属性の場合は1行目のみとして次の処理へ進む
-                } else {
+                }else{
                     tplTargetData.push(tplData[i]); // 該当するテンプレを配列に追加
                     tplRows = tplRows + 1; // 該当するテンプレの行数をカウント
                 }
@@ -29,6 +29,7 @@ function tplInsert(e){
             if(llData[i][13]===e.value){
                 if(owFlag){
                     wflSheet.getRange(beginRow_LL+i,7,1,7).setValues(tplTargetData); // テンプレ貼付
+                    wflSheet.getRange(insFlagRow,14,tplRows,1).setValue(''); // テンプレ指定のフラグを初期化
                     break;
                 }else{
                     wflSheet.insertRowsAfter(beginRow_LL+i,tplRows); // テンプレ指定した位置の下へ空白行を挿入
