@@ -10,7 +10,7 @@ function formatReset(call,addRows){
         llData = wflSheet.getRange(beginRow_LL,1,endRow-beginRow_LL+1+addRows,endCol).getValues();
         bgData = wflSheet.getRange(beginRow_LL,1,endRow-beginRow_LL+1+addRows,endCol).getBackgrounds();    
         for(let i=0;i<(endRow-beginRow_LL+1+addRows);i++){
-            if((llData[i][0]===false) && bgData[i][0]!=='white'){
+            if((llData[i][1]===false) && bgData[i][1]!=='white'){
                 wflSheet.getRange(i+beginRow_LL,1,1,endCol).setBackground('white');
                 wflSheet.getRange(i+beginRow_LL,1,1,endCol).setFontColor('black');
             }
