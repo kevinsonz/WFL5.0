@@ -4,10 +4,10 @@ function tplInsert(e){
     llData = wflSheet.getRange(beginRow_LL,1,endRow_LL-beginRow_LL+1,endCol).getValues();
     const tplNamesSheet = wflFile.getSheetByName('tplNames');
     const tplNames = tplNamesSheet.getRange('A1:A').getValues().flat();
-    const tplDataCheck = tplNames.includes(e.value);
+    const tplDataCheck = tplNames.includes(e['value']);
     const runFlag =  tplDataCheck && typeData === 'LL';
     let tplTargetData = [];
-    const owFlag = e.slice(0,1) === '_'; // 上書き(OverWrite)フラグ
+    const owFlag = e['value'].slice(0,1) === '_'; // 上書き(OverWrite)フラグ
     if(runFlag){
         let tplRows = 0; // テンプレ行数
         let insFlagRow = 0; // テンプレフラグ位置
