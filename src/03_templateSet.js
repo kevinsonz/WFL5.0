@@ -43,13 +43,13 @@ function tplInsert(e){
             for(let i=0; i<(endRow_LL-beginRow_LL+1); i++){
                 if(llData[i][13]===e.value){
                     for(let j=6; j<13; j++){
-                        wflSheet.getRange(beginRow_LL+i,7+j).setValue(tplTargetData[0][j]); // テンプレ上書き
+                        wflSheet.getRange(beginRow_LL+i,j+1).setValue(tplTargetData[0][j]); // テンプレ上書き
                     }
                     insFlagRow = (beginRow_LL+i); // テンプレ指定の位置を把握
                     break; // 上書き属性の場合は1行目のみとして次の処理へ進む
                 }
             }
-            wflSheet.getRange(insFlagRow,14,tplRows,1).setValue(''); // テンプレ指定のフラグを初期化
+            wflSheet.getRange(insFlagRow,14).setValue(''); // テンプレ指定のフラグを初期化
         }
     }
 }
