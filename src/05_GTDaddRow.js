@@ -1,7 +1,7 @@
 // GTD行追加
 
 function addRowGTD(){
-    if(statusGTD === 'Add'){
+    if(statusGTD === 'Add' && endCol === 11){
         gtdSheet.getRange(1,1,endRow_GTD,11).setBorder(true,true,true,true,true,true,'black',SpreadsheetApp.BorderStyle.SOLID_MEDIUM);
         let filterGTD = gtdSheet.getFilter();
         if(filterGTD !== null){
