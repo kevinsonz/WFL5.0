@@ -13,7 +13,7 @@ const endRow_tpl = templateSheet.getMaxRows();
 const beginRow_GTD = 2;
 const endRow_GTD = gtdSheet.getMaxRows();
 
-// 列
+// 列(全シート共通)
 const endCol = wflSheet.getMaxColumns();
 
 // セル
