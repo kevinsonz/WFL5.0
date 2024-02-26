@@ -4,17 +4,22 @@
 const wflFile = SpreadsheetApp.getActiveSpreadsheet();
 const wflSheet = wflFile.getActiveSheet();
 const templateSheet = wflFile.getSheetByName('Template');
+const mboSheet = wflFile.getSheetByName('MBO');
 const gtdSheet = wflFile.getSheetByName('GTD');
 
 // 行
 const beginRow_LL = 9;
 const endRow_LL = wflSheet.getMaxRows();
 const endRow_tpl = templateSheet.getMaxRows();
+const beginRow_MBO = 4;
+const endRow_MBO = mboSheet.getMaxRows();
+const mboRow = 573;
 const beginRow_GTD = 2;
 const endRow_GTD = gtdSheet.getMaxRows();
 
 // 列(全シート共通)
 const endCol = wflSheet.getMaxColumns();
+const mboCol = 52;
 
 // セル
 const runCell = 'D3';
@@ -35,3 +40,4 @@ if(isLL){
 }
 const okCol = (endCol === 26);
 const statusGTD = gtdSheet.getRange('A1').getValue();
+const statusMBO = mboSheet.getRange('A1').getValue();
