@@ -7,10 +7,10 @@ function tplInsert(e){
     const tplDataCheck = tplNames.includes(e['value']);
     const runFlag =  tplDataCheck && typeData === 'LL';
     let tplTargetData = [];
-    const owFlag = e['value'].slice(0,1) === '_'; // 上書き(OverWrite)フラグ
     if(runFlag){
         let tplRows = 0; // テンプレ行数
         let insFlagRow = 0; // テンプレフラグ位置
+        const owFlag = e['value'].slice(0,1) === '_'; // 上書き(OverWrite)フラグ
         if(!owFlag){ // テンプレ挿入モード
             // テンプレ対象取得
             for(let i=0; i<(endRow_tpl-beginRow_LL+1); i++){
