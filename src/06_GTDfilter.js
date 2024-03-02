@@ -1,21 +1,23 @@
-// GTDフィルター: On/Off切替え
+// GTDフィルター(On/Off切替え)
 
 function hiddenGTD(e){
-    const runFlug = e['range']==='I1' && endCol === 11;
+    const eRow = e['range'].getRow();
+    const eColumn = e['range'].getColumn();
+    const runFlug = (eRow === 1) && (eColumn === 9) && (endCol === 11);
     if(runFlug){
-        if(e['value']===true){
-            const rule1 = SpreadsheetApp.newFilterCriteria()
-            .whenTextEqualTo('完了')
-            .build();　//ビルダーを構築
-            const rule2 = SpreadsheetApp.newFilterCriteria()
-            .whenTextEqualTo('中止')
-            .build();　//ビルダーを構築
-            gtdSheet.getDataRange().createFilter()
-            .setColumnFilterCriteria(1, rule1)
-            .setColumnFilterCriteria(1, rule2);
-        }else{
-            gtdSheet.getFilter().remove();
-            gtdSheet.getRange(beginRow_GTD-1,1,endRow_GTD,11).createFilter();
-        }
+      const ckBox = gtdSheet.getRange('I1').getValue();
+      let filterGTD = gtdSheet.getFilter();
+      if(filterGTD !== null){
+          gtdSheet.getFilter().remove();
+      }
+      if(ckBox === true){
+        const rule = SpreadsheetApp.newFilterCriteria()
+        .setHiddenValues(['完了','中止'])
+        .build();　//ビルダーを構築
+        gtdSheet.getRange(beginRow_GTD-1,1,endRow_GTD,11).createFilter()
+        .setColumnFilterCriteria(9,rule);
+      }else{
+        gtdSheet.getRange(beginRow_GTD-1,1,endRow_GTD,11).createFilter();
+      }
     }
-}
+  }
