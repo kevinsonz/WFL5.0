@@ -35,3 +35,4 @@ if(isLL){
 }
 const okCol = (endCol === 26);
 const statusGTD = gtdSheet.getRange('A1').getValue();
+const filterGTD = gtdSheet.getRange('I1').getValue();
