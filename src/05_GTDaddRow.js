@@ -3,11 +3,7 @@
 function addRowGTD(){
     if(statusGTD === 'Add' && endCol === 11){
         gtdSheet.getRange(beginRow_GTD-1,1,endRow_GTD,11).setBorder(true,true,true,true,true,true,'black',SpreadsheetApp.BorderStyle.SOLID_MEDIUM);
-        let filterGTD = gtdSheet.getFilter();
-        if(filterGTD !== null){
-            gtdSheet.getFilter().remove();
-        }
-        gtdSheet.getRange(beginRow_GTD-1,1,endRow_GTD,11).createFilter();
+        hiddenGTD('call');
         const maxNo = Math.max.apply(null,gtdNo);
         let addNo = 0;
         for(i=0;i<((endRow_GTD)-(beginRow_GTD)+1);i++){
