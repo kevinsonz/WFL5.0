@@ -7,7 +7,7 @@ function addRowGTD(){
         if(filterGTD !== null){
             gtdSheet.getFilter().remove();
         }
-        gtdSheet.getRange(1,1,endRow_GTD,11).createFilter();
+        gtdSheet.getRange(beginRow_GTD-1,1,endRow_GTD,11).createFilter();
         const maxNo = Math.max.apply(null,gtdNo);
         let addNo = 0;
         for(i=0;i<(endRow_GTD-1);i++){

@@ -10,7 +10,7 @@ const gtdSheet = wflFile.getSheetByName('GTD');
 const beginRow_LL = 9;
 const endRow_LL = wflSheet.getMaxRows();
 const endRow_tpl = templateSheet.getMaxRows();
-const beginRow_GTD = 2;
+const beginRow_GTD = 3;
 const endRow_GTD = gtdSheet.getMaxRows();
 
 // 列(全シート共通)
