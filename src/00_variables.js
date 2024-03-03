@@ -19,6 +19,7 @@ const endRow_GTD = gtdSheet.getMaxRows();
 
 // 列(全シート共通)
 const endCol = wflSheet.getMaxColumns();
+const endCol_MBO = mboSheet.getMaxColumns();
 const mboCol = 52;
 
 // セル
