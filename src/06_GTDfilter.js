@@ -10,7 +10,7 @@ function hiddenGTD(e){
     eRow = e['range'].getRow();
     eColumn = e['range'].getColumn();
   }
-  const runFlug = (e = 'call' || ((eRow === 1) && (eColumn === 9))) && (endCol === 11);
+  const runFlug = (e === 'call' || ((eRow === 1) && (eColumn === 9))) && (endCol === 11);
   if(runFlug){
     const ckBox = gtdSheet.getRange('I1').getValue();
     let filterGTD = gtdSheet.getFilter();
