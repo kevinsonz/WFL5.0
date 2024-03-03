@@ -4,20 +4,21 @@ function mboFilter(e){
     const eRow = e['range'].getRow();
     const eColumn = e['range'].getColumn();
       const runFlag = (endCol_MBO === mboCol) && (e['value'] === true) && ((eRow === 2) && (eColumn === 1));
+      let ckBox = mboSheet.getRange('A2').getValue();
       if(runFlag){
-          const ckBox = mboSheet.getRange('A2').getValue();
-          let filterMBO = mboSheet.getFilter();
-          if(filterMBO !== null){
-              mboSheet.getFilter().remove();
-          }
-          if(statusMBO === '今' && ckBox === true){
-              mboSheet.getRange(1,1,endRow_MBO,mboCol).createFilter();
-              let rule = SpreadsheetApp.newFilterCriteria()
-              .setHiddenValues(['Hidden'])
-              .build();
-              mboSheet.getRange(beginRow_MBO-1,1,mboRow-2,52).createFilter()
-              .setColumnFilterCriteria(2,rule);
-          }
+        let filterMBO = mboSheet.getFilter();
+        if(filterMBO !== null){
+            mboSheet.getFilter().remove();
+        }
+        if(statusMBO === '今' && ckBox === true){
+          const rule = SpreadsheetApp.newFilterCriteria()
+          .setHiddenValue('Hidden')
+          .build();
+          mboSheet.getRange(beginRow_MBO-1,1,mboRow-2,52).createFilter()
+          .setColumnFilterCriteria(2,rule);
+        }else{
+          mboSheet.getRange(beginRow_MBO-1,1,mboRow-2,52).createFilter();
+        }
         mboSheet.getRange('A2').setValue(false);
       }
       const logSheet = wflFile.getSheetByName('Log');
