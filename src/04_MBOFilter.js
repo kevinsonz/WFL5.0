@@ -1,6 +1,6 @@
 // MBOフィルターのモード切替え
 
-function tplInsert(e){
+function mboFilter(e){
   const eRow = e['range'].getRow();
   const eColumn = e['range'].getColumn();
     const runFlag = (endCol === mboCol) && (e['value'] === true) && ((eRow === 2) && (eColumn === 1));
