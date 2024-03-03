@@ -39,5 +39,6 @@ if(isLL){
     runFunc = wflSheet.getRange(runCell).getValue();
 }
 const okCol = (endCol === 26);
+const statusMBO = mboSheet.getRange('A2').getValue();
 const statusGTD = gtdSheet.getRange('A1').getValue();
 const filterGTD = gtdSheet.getRange('I1').getValue();
