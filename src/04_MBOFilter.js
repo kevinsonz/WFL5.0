@@ -14,10 +14,12 @@ function mboFilter(e){
           const rule = SpreadsheetApp.newFilterCriteria()
           .setHiddenValue('Hidden')
           .build();
-          mboSheet.getRange(beginRow_MBO-1,1,mboRow-2,52).createFilter()
+          mboSheet.getRange(beginRow_MBO-1,1,mboRow,endCol_MBO).createFilter()
           .setColumnFilterCriteria(2,rule);
+          logSheet.getRange(7,1).setValue("rule");
+          logSheet.getRange(7,2).setValue(rule);
         }else{
-          mboSheet.getRange(beginRow_MBO-1,1,mboRow-2,52).createFilter();
+          mboSheet.getRange(beginRow_MBO-1,1,mboRow,endCol_MBO).createFilter();
         }
         mboSheet.getRange('A2').setValue(false);
       }
@@ -29,10 +31,12 @@ function mboFilter(e){
       logSheet.getRange(4,1).setValue("statusMBO");
       logSheet.getRange(5,1).setValue("ckBox");
       logSheet.getRange(6,1).setValue("endCol_MBO");
+      // logSheet.getRange(7,1).setValue("rule");
       logSheet.getRange(1,2).setValue(e['value']);
       logSheet.getRange(2,2).setValue(eRow);
       logSheet.getRange(3,2).setValue(eColumn);
       logSheet.getRange(4,2).setValue(statusMBO);
       logSheet.getRange(5,2).setValue(ckBox);
       logSheet.getRange(6,2).setValue(endCol_MBO);
+      // logSheet.getRange(7,2).setValue(rule);
   }

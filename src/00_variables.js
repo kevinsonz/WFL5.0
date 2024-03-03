@@ -13,7 +13,7 @@ const endRow_LL = wflSheet.getMaxRows();
 const endRow_tpl = templateSheet.getMaxRows();
 const beginRow_MBO = 4;
 const endRow_MBO = mboSheet.getMaxRows();
-const mboRow = 573;
+const mboRow = 570;
 const beginRow_GTD = 3;
 const endRow_GTD = gtdSheet.getMaxRows();
 
