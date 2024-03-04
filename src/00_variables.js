@@ -20,7 +20,7 @@ const endRow_GTD = gtdSheet.getMaxRows();
 // 列(全シート共通)
 const endCol = wflSheet.getMaxColumns();
 const endCol_MBO = mboSheet.getMaxColumns();
-const mboCol = 52;
+const mboCol = 53;
 
 // セル
 const runCell = 'D3';
