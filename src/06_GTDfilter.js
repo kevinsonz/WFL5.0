@@ -17,7 +17,7 @@ function hiddenGTD(e){
     if(filterGTD !== null){
         gtdSheet.getFilter().remove();
     }
-    if(ckBox === true){
+    if(ckBox === true || e['value'] === '完了' || e['value'] === '中止'){
       const rule = SpreadsheetApp.newFilterCriteria()
       .setHiddenValues(['完了','中止'])
       .build(); //ビルダーを構築
