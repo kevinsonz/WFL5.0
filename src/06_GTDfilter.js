@@ -29,13 +29,13 @@ function hiddenGTD(e){
     }
     let rule = [];
     switch(filterPRM){
-      case '生':
-        ruleSet(9,['完了','中止']);
-        break;
-      case '活':
+      case '活性':
         ruleSet(9,['完了','中止','保留','メモ']);
         break;
-      case '終':
+      case '非活':
+        ruleSet(9,['完了','中止','未着','着手']);
+        break;
+      case '終了':
         ruleSet(9,['未着','着手','保留','メモ']);
         break;
       default:
