@@ -19,23 +19,24 @@ function hiddenGTD(e){
     if(filterGTD !== null){
         gtdSheet.getFilter().remove();
     }
+    let rule = [];
     switch(filterPRM){
       case '生':
-        const rule = SpreadsheetApp.newFilterCriteria()
+        rule = SpreadsheetApp.newFilterCriteria()
         .setHiddenValues(['完了','中止'])
         .build(); //ビルダーを構築
         gtdSheet.getRange(beginRow_GTD-1,1,endRow_GTD,11).createFilter()
         .setColumnFilterCriteria(9,rule);
         break;
       case '活':
-        const rule = SpreadsheetApp.newFilterCriteria()
+        rule = SpreadsheetApp.newFilterCriteria()
         .setHiddenValues(['完了','中止','保留'])
         .build(); //ビルダーを構築
         gtdSheet.getRange(beginRow_GTD-1,1,endRow_GTD,11).createFilter()
         .setColumnFilterCriteria(9,rule);
         break;
       case '終':
-        const rule = SpreadsheetApp.newFilterCriteria()
+        rule = SpreadsheetApp.newFilterCriteria()
         .setHiddenValues(['未着','着手','保留'])
         .build(); //ビルダーを構築
         gtdSheet.getRange(beginRow_GTD-1,1,endRow_GTD,11).createFilter()
