@@ -1,11 +1,22 @@
 // GTDフィルター(On/Off切替え)
 
-function ruleSet(n,a){
-  rule = SpreadsheetApp.newFilterCriteria()
+function ruleSet(a,b,c){
+  let rule1 = [];
+  let rule2 = [];
+  let rule3 = [];
+  rule1 = SpreadsheetApp.newFilterCriteria()
   .setHiddenValues(a)
   .build(); //ビルダーを構築
+  rule2 = SpreadsheetApp.newFilterCriteria()
+  .setHiddenValues(b)
+  .build(); //ビルダーを構築
+  rule3 = SpreadsheetApp.newFilterCriteria()
+  .setHiddenValues(c)
+  .build(); //ビルダーを構築
   gtdSheet.getRange(beginRow_GTD-1,1,endRow_GTD,11).createFilter()
-  .setColumnFilterCriteria(n,rule);
+  .setColumnFilterCriteria(4,rule1)
+  .setColumnFilterCriteria(7,rule2)
+  .setColumnFilterCriteria(9,rule3);
 }
 
 function hiddenGTD(e){
@@ -29,54 +40,54 @@ function hiddenGTD(e){
     if(filterGTD !== null){
         gtdSheet.getFilter().remove();
     }
-    let rule = [];
 
     switch(filterPRM1){
+      let ruleSetData1 = [];
       case 'W':
-        ruleSet(4,['F','L','E','O','Z']);
+        ruleSetData1 = ['F','L','E','O','Z'];
         break;
       case 'F':
-        ruleSet(4,['W','L','E','O','Z']);
+        ruleSetData1 = ['W','L','E','O','Z'];
         break;
       case 'L':
-        ruleSet(4,['W','F','E','O','Z']);
+        ruleSetData1 = ['W','F','E','O','Z'];
         break;
       case 'E':
-        ruleSet(4,['W','F','L']);
+        ruleSetData1 = ['W','F','L'];
         break;
       default:
-        ruleSet(4,[]);
         break;
     }
 
     switch(filterPRM2){
+      let ruleSetData2 = [];
       case '急重':
-        ruleSet(7,['2','3','4','9']);
+        ruleSetData2 = ['2','3','4','9'];
         break;
       case '急':
-        ruleSet(7,['3','4','9']);
+        ruleSetData2 = ['3','4','9'];
         break;
       case '重':
-        ruleSet(7,['2','9']);
+        ruleSetData2 = ['2','9'];
         break;
       default:
-        ruleSet(7,[]);
         break;
     }
 
     switch(filterPRM3){
+      let ruleSetData3 = [];
       case '活性':
-        ruleSet(9,['完了','中止','保留','メモ']);
+        ruleSetData3 = ['完了','中止','保留','メモ'];
         break;
       case '非活':
-        ruleSet(9,['完了','中止','未着','着手']);
+        ruleSetData3 = ['完了','中止','未着','着手'];
         break;
       case '終了':
-        ruleSet(9,['未着','着手','保留','メモ']);
+        ruleSetData3 = ['未着','着手','保留','メモ'];
         break;
       default:
-        ruleSet(9,[]);
         break;
     }
+    ruleSet(ruleSetData1,ruleSetData2,ruleSetData3);
   }
 }
