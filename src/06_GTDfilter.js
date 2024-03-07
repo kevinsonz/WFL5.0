@@ -41,7 +41,7 @@ function hiddenGTD(e){
         gtdSheet.getRange(beginRow_GTD-1,1,endRow_GTD,11).createFilter()
         .setColumnFilterCriteria(9,rule);
         break;
-      defalut:
+      default:
         gtdSheet.getRange(beginRow_GTD-1,1,endRow_GTD,11).createFilter();
         break;
     }
