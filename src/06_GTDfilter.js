@@ -71,6 +71,9 @@ function hiddenGTD(e){
       case '重':
         ruleSetData2 = ['2','9'];
         break;
+      case '無印':
+        ruleSetData2 = ['1','2','3','9'];
+        break;
       default:
         break;
     }
