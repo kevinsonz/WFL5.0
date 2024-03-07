@@ -41,8 +41,10 @@ function hiddenGTD(e){
         gtdSheet.getFilter().remove();
     }
 
+    let ruleSetData1 = [];
+    let ruleSetData2 = [];
+    let ruleSetData3 = [];
     switch(filterPRM1){
-      let ruleSetData1 = [];
       case 'W':
         ruleSetData1 = ['F','L','E','O','Z'];
         break;
@@ -60,7 +62,6 @@ function hiddenGTD(e){
     }
 
     switch(filterPRM2){
-      let ruleSetData2 = [];
       case '急重':
         ruleSetData2 = ['2','3','4','9'];
         break;
@@ -75,7 +76,6 @@ function hiddenGTD(e){
     }
 
     switch(filterPRM3){
-      let ruleSetData3 = [];
       case '活性':
         ruleSetData3 = ['完了','中止','保留','メモ'];
         break;
