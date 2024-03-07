@@ -43,6 +43,7 @@ function hiddenGTD(e){
         break;
       defalut:
         gtdSheet.getRange(beginRow_GTD-1,1,endRow_GTD,11).createFilter();
+        break;
     }
   }
 }
