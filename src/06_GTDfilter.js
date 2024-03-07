@@ -1,5 +1,13 @@
 // GTDフィルター(On/Off切替え)
 
+function ruleSet(a){
+  rule = SpreadsheetApp.newFilterCriteria()
+  .setHiddenValues(a)
+  .build(); //ビルダーを構築
+  gtdSheet.getRange(beginRow_GTD-1,1,endRow_GTD,11).createFilter()
+  .setColumnFilterCriteria(9,rule);
+}
+
 function hiddenGTD(e){
   let eRow = 0;
   let eColumn = 0;
@@ -22,25 +30,13 @@ function hiddenGTD(e){
     let rule = [];
     switch(filterPRM){
       case '生':
-        rule = SpreadsheetApp.newFilterCriteria()
-        .setHiddenValues(['完了','中止'])
-        .build(); //ビルダーを構築
-        gtdSheet.getRange(beginRow_GTD-1,1,endRow_GTD,11).createFilter()
-        .setColumnFilterCriteria(9,rule);
+        ruleSet(['完了','中止']);
         break;
       case '活':
-        rule = SpreadsheetApp.newFilterCriteria()
-        .setHiddenValues(['完了','中止','保留','メモ'])
-        .build(); //ビルダーを構築
-        gtdSheet.getRange(beginRow_GTD-1,1,endRow_GTD,11).createFilter()
-        .setColumnFilterCriteria(9,rule);
+        ruleSet(['完了','中止','保留','メモ']);
         break;
       case '終':
-        rule = SpreadsheetApp.newFilterCriteria()
-        .setHiddenValues(['未着','着手','保留','メモ'])
-        .build(); //ビルダーを構築
-        gtdSheet.getRange(beginRow_GTD-1,1,endRow_GTD,11).createFilter()
-        .setColumnFilterCriteria(9,rule);
+        ruleSet(['未着','着手','保留','メモ']);
         break;
       default:
         gtdSheet.getRange(beginRow_GTD-1,1,endRow_GTD,11).createFilter();
