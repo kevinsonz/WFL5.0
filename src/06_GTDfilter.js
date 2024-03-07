@@ -14,19 +14,35 @@ function hiddenGTD(e){
   }
   const runFlug = (e === 'call' || eFlag || ((eRow === 1) && (eColumn === 9))) && (endCol === 11);
   if(runFlug){
-    const ckBox = gtdSheet.getRange('I1').getValue();
+    const filterPRM = gtdSheet.getRange('I1').getValue();
     let filterGTD = gtdSheet.getFilter();
     if(filterGTD !== null){
         gtdSheet.getFilter().remove();
     }
-    if(ckBox){
-      const rule = SpreadsheetApp.newFilterCriteria()
-      .setHiddenValues(['完了','中止'])
-      .build(); //ビルダーを構築
-      gtdSheet.getRange(beginRow_GTD-1,1,endRow_GTD,11).createFilter()
-      .setColumnFilterCriteria(9,rule);
-    }else{
-      gtdSheet.getRange(beginRow_GTD-1,1,endRow_GTD,11).createFilter();
+    switch(filterPRM){
+      case '生':
+        const rule = SpreadsheetApp.newFilterCriteria()
+        .setHiddenValues(['完了','中止'])
+        .build(); //ビルダーを構築
+        gtdSheet.getRange(beginRow_GTD-1,1,endRow_GTD,11).createFilter()
+        .setColumnFilterCriteria(9,rule);
+        break;
+      case '活':
+        const rule = SpreadsheetApp.newFilterCriteria()
+        .setHiddenValues(['完了','中止','保留'])
+        .build(); //ビルダーを構築
+        gtdSheet.getRange(beginRow_GTD-1,1,endRow_GTD,11).createFilter()
+        .setColumnFilterCriteria(9,rule);
+        break;
+      case '終':
+        const rule = SpreadsheetApp.newFilterCriteria()
+        .setHiddenValues(['未着','着手','保留'])
+        .build(); //ビルダーを構築
+        gtdSheet.getRange(beginRow_GTD-1,1,endRow_GTD,11).createFilter()
+        .setColumnFilterCriteria(9,rule);
+        break;
+      defalut:
+        gtdSheet.getRange(beginRow_GTD-1,1,endRow_GTD,11).createFilter();
     }
   }
 }
