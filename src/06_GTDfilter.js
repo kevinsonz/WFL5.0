@@ -30,14 +30,14 @@ function hiddenGTD(e){
         break;
       case '活':
         rule = SpreadsheetApp.newFilterCriteria()
-        .setHiddenValues(['完了','中止','保留'])
+        .setHiddenValues(['完了','中止','保留','メモ'])
         .build(); //ビルダーを構築
         gtdSheet.getRange(beginRow_GTD-1,1,endRow_GTD,11).createFilter()
         .setColumnFilterCriteria(9,rule);
         break;
       case '終':
         rule = SpreadsheetApp.newFilterCriteria()
-        .setHiddenValues(['未着','着手','保留'])
+        .setHiddenValues(['未着','着手','保留','メモ'])
         .build(); //ビルダーを構築
         gtdSheet.getRange(beginRow_GTD-1,1,endRow_GTD,11).createFilter()
         .setColumnFilterCriteria(9,rule);
