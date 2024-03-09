@@ -7,11 +7,11 @@ function hideColMBO(e){
     if(runFlag){
         const hideCols = [8,12,16,20];
         if(e['value'] === '閉'){
-            for(i=0; i<hideCols.length; i++){
+            for(let i=0; i<hideCols.length; i++){
                 mboSheet.hideColumns(hideCols[i],3);
             }
         }else if(e['value'] === '開'){
-            for(i=0; i<hideCols.length; i++){
+            for(let i=0; i<hideCols.length; i++){
                 mboSheet.showColumns(hideCols[i],3);
             }
         }
