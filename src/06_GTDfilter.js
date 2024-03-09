@@ -54,19 +54,19 @@ function hiddenGTD(e){
   switch(filterPRM1){
     case 'W':
       ruleSetData1 = prmCodeW;
-      eFlag = !prmCodeW.includes(e['value']);
+      eFlag = prmCodeW.includes(e['value']);
       break;
     case 'F':
       ruleSetData1 = prmCodeF;
-      eFlag = !prmCodeF.includes(e['value']);
+      eFlag = prmCodeF.includes(e['value']);
       break;
     case 'L':
       ruleSetData1 = prmCodeL;
-      eFlag = !prmCodeL.includes(e['value']);
+      eFlag = prmCodeL.includes(e['value']);
       break;
     case 'E':
       ruleSetData1 = prmCodeE;
-      eFlag = !prmCodeE.includes(e['value']);
+      eFlag = prmCodeE.includes(e['value']);
       break;
     default:
       break;
@@ -76,19 +76,19 @@ function hiddenGTD(e){
     switch(filterPRM2){
     case '急重':
       ruleSetData2 = prmUrgentAndImportant;
-      eFlag = !prmUrgentAndImportant.includes(e['value']);
+      eFlag = prmUrgentAndImportant.includes(e['value']);
       break;
     case '急':
       ruleSetData2 = prmUrgent;
-      eFlag = !prmUrgent.includes(e['value']);
+      eFlag = prmUrgent.includes(e['value']);
       break;
     case '重':
       ruleSetData2 = prmImportant;
-      eFlag = !prmImportant.includes(e['value']);
+      eFlag = prmImportant.includes(e['value']);
       break;
     case '無印':
       ruleSetData2 = prmNormal;
-      eFlag = !prmNormal.includes(e['value']);
+      eFlag = prmNormal.includes(e['value']);
       break;
     default:
       break;
@@ -98,15 +98,15 @@ function hiddenGTD(e){
   switch(filterPRM3){
     case '活性':
       ruleSetData3 = prmActive;
-      eFlag = !prmActive.includes(e['value']);
+      eFlag = prmActive.includes(e['value']);
       break;
     case '非活':
       ruleSetData3 = prmInactive;
-      eFlag = !prmInactive.includes(e['value']);
+      eFlag = prmInactive.includes(e['value']);
       break;
     case '終了':
       ruleSetData3 = prmFinished;
-      eFlag = !prmFinished.includes(e['value']);
+      eFlag = prmFinished.includes(e['value']);
       break;
     default:
       break;
