@@ -6,7 +6,7 @@ function addRowGTD(){
         hiddenGTD('call');
         const maxNo = Math.max.apply(null,gtdNo);
         let addNo = 0;
-        for(i=0;i<((endRow_GTD)-(beginRow_GTD)+1);i++){
+        for(let i=0;i<((endRow_GTD)-(beginRow_GTD)+1);i++){
             if(gtdData[i][10] === ''){
               addNo = addNo + 1 ;
               gtdSheet.getRange(beginRow_GTD+i,1).setValue(maxNo + addNo);
