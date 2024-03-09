@@ -8,11 +8,11 @@ function hideColMBO(e){
         const hideCols = [8,12,16,20];
         if(e['value'] === '閉'){
             for(i=0; i<hideCols.length; i++){
-                mboSheet.hideColumns(hideCols,3);
+                mboSheet.hideColumns(hideCols[i],3);
             }
         }else if(e['value'] === '開'){
             for(i=0; i<hideCols.length; i++){
-                mboSheet.showColumns(hideCols,3);
+                mboSheet.showColumns(hideCols[i],3);
             }
         }
         mboSheet.getRange('A1').setValue(e['oldValue']);
