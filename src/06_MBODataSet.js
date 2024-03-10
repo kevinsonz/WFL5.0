@@ -1,12 +1,12 @@
 // MBOシート：LLData領域
 
 function dataFormulaSet(){
-    const mmDays = mboSheet.getRange('AR143:AR154').getValues();
+    const mmDays = mboSheet.getRange('AR143:AR154').getValues(); // 月の日数
+    const m = mboSheet.getRange('AJ143:AJ154').getValues(); // 月の情報
+    let nextRow = 0;
     for(let i=0; mmDays.length; i++){
-        for(let j=0; j<mmDays[i]; j++){ // 1年=366日(閏日含む)
-            const m = mboSheet.getRange(mboRow_DayStart+j,mboCol_Mm).getValue();
-            const mm = ('00'+m).slice(-2);
-            mboSheet.getRange((mboRow_DayStart+j),mboCol_DataFormula).setFormula('=countifs(\''+mm+'\'!V:V,AP'+(mboRow_DayStart+j)+',\''+mm+'\'!B:B,FALSE,\''+mm+'\'!J:J,\"<>\")>0');
-        }
+            const mm = ('00'+m[i]).slice(-2);
+            mboSheet.getRange(mboRow_DayStart+nextRow,mboCol_DataFormula,mmDays[i],1).setFormula('=countifs(\''+mm+'\'!V:V,AP'+(mboRow_DayStart+i)+',\''+mm+'\'!B:B,FALSE,\''+mm+'\'!J:J,\"<>\")>0');
+            nextRow = nextRow+mmDays[i];
     }
 }

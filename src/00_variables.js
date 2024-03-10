@@ -22,7 +22,6 @@ const mboRow_DayStart = 208;
 const endCol = wflSheet.getMaxColumns();
 const endCol_MBO = mboSheet.getMaxColumns();
 const mboCol = 66;
-const mboCol_Mm = 36;
 const mboCol_DataFormula = 44;
 
 // セル
