@@ -21,8 +21,8 @@ const mboRow_DayStart = 208;
 // 列(全シート共通)
 const endCol = wflSheet.getMaxColumns();
 const endCol_MBO = mboSheet.getMaxColumns();
-const mboCol = 66;
-const mboCol_DataFormula = 44;
+const mboCol = 69;
+const mboCol_DataFormula = 47;
 
 // セル
 const runCell = 'D3';
