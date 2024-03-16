@@ -29,10 +29,10 @@ function dataFormulaSet(){
                 .setFormula('=countifs(\''+mm+'\'!V:V,'+ymd8+(mboRow_DayStart+nextRow)+',\''+mm+'\'!B:B,FALSE,\''+mm+'\'!J:J,\"<>\")>0');
             // 2つ目（開始時刻）
             mboSheet.getRange(mboRow_DayStart+nextRow,mboCol_DataFormula+1,Number(mmDays[i]),1)
-                .setFormula('=if($'+status+(mboRow_DayStart+nextRow)+'=TRUE,minifs(\''+mm+'\'!D:D,\''+mm+'\'!V:V,'+ymd8+(mboRow_DayStart+nextRow)+'-'+ymd+(mboRow_DayStart+nextRow)+'),"-")');
+                .setFormula('=if($'+status+(mboRow_DayStart+nextRow)+'=TRUE,minifs(\''+mm+'\'!D:D,\''+mm+'\'!V:V,'+ymd8+(mboRow_DayStart+nextRow)+')-'+ymd+(mboRow_DayStart+nextRow)+',"-")');
             // 3つ目（終了時刻）
             mboSheet.getRange(mboRow_DayStart+nextRow,mboCol_DataFormula+2,Number(mmDays[i]),1)
-                .setFormula('=if($'+status+(mboRow_DayStart+nextRow)+'=TRUE,maxifs(\''+mm+'\'!E:E,\''+mm+'\'!V:V,'+ymd8+(mboRow_DayStart+nextRow)+'-'+ymd+(mboRow_DayStart+nextRow)+'),"-")');
+                .setFormula('=if($'+status+(mboRow_DayStart+nextRow)+'=TRUE,maxifs(\''+mm+'\'!E:E,\''+mm+'\'!V:V,'+ymd8+(mboRow_DayStart+nextRow)+')-'+ymd+(mboRow_DayStart+nextRow)+',"-")');
             // 4つ目（ZZ基準（終了-開始））
             mboSheet.getRange(mboRow_DayStart+nextRow,mboCol_DataFormula+3,Number(mmDays[i]),1)
                 .setFormula('=iferror(if($'+status+(mboRow_DayStart+nextRow)+'=TRUE,if(('+start+(mboRow_DayStart+nextRow)+'-offset('+end+(mboRow_DayStart+nextRow)+',-1,0))*24>=0,('+start+(mboRow_DayStart+nextRow)+'-offset('+end+(mboRow_DayStart+nextRow)+',-1,0))*24,"NG"),"-"),"-")');
