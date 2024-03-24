@@ -34,7 +34,7 @@ function hiddenGTD(e){
   const prmCodeE = ['W','F','L'];
   const prmUrgentAndImportant = ['2','3','4','9'];
   const prmUrgent = ['3','4','9'];
-  const prmImportant = ['2','9'];
+  const prmImportant = ['2','4','9'];
   const prmNormal = ['1','2','3','9'];
   const prmActive = ['完了','中止','保留','メモ'];
   const prmInactive = ['完了','中止','未着','着手'];

@@ -16,11 +16,13 @@ const endRow_MBO = mboSheet.getMaxRows();
 const mboRow = 570;
 const beginRow_GTD = 3;
 const endRow_GTD = gtdSheet.getMaxRows();
+const mboRow_DayStart = 208;
 
 // 列(全シート共通)
 const endCol = wflSheet.getMaxColumns();
 const endCol_MBO = mboSheet.getMaxColumns();
-const mboCol = 53;
+const mboCol = 69;
+const mboCol_DataFormula = 47;
 
 // セル
 const runCell = 'D3';
@@ -31,6 +33,7 @@ let bgData = [];
 const tplData = templateSheet.getRange(beginRow_LL,1,endRow_tpl-beginRow_LL+1,endCol).getValues();
 const gtdNo = gtdSheet.getRange(beginRow_GTD,1,endRow_GTD,1).getValues();
 const gtdData = gtdSheet.getRange(beginRow_GTD,1,endRow_GTD,11).getValues();
+const mboData_Day = mboSheet.getRange(mboRow_DayStart,1,366,43).getValues();
 
 // 識別
 const typeData = wflSheet.getRange('B2').getValue();
