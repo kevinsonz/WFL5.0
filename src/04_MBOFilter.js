@@ -12,7 +12,7 @@ function mboFilter(e){
   const eValue1 = (statusMBO === '全' || statusMBO === '今') && e['value'] === 'TRUE';
   const eValue2 = (e['value'] === '両' || e['value'] === '↑' || e['value'] === '↓');
   const runFlag = (endCol_MBO === mboCol) && (ePosition1 || ePosition2);
-  if(runFlag){
+  if(runFlag && (eValue1 || eValue2)){
     let filterMBO = mboSheet.getFilter();
     if(filterMBO !== null){
       mboSheet.getFilter().remove();
