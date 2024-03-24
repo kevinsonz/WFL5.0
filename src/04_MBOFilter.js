@@ -31,7 +31,6 @@ function mboFilter(e){
       mboSheet.getRange('A2').setValue(false);
     }
     if(eValue2){
-      logSheet.getRange(20,1).setValue('動いてる'); // 一時的
       const rule2 = SpreadsheetApp.newFilterCriteria()
         .setHiddenValues(["false"])
         .build();
