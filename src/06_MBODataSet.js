@@ -35,7 +35,7 @@ function dataFormulaSet(){
                 .setFormula('=if($'+status+(mboRow_DayStart+nextRow)+'=TRUE,maxifs(\''+mm+'\'!E:E,\''+mm+'\'!V:V,'+ymd8+(mboRow_DayStart+nextRow)+')-'+ymd+(mboRow_DayStart+nextRow)+',"-")');
             // 4つ目（ZZ基準（終了-開始））
             mboSheet.getRange(mboRow_DayStart+nextRow,mboCol_DataFormula+3,Number(mmDays[i]),1)
-                .setFormula('=iferror(if($'+status+(mboRow_DayStart+nextRow)+'=TRUE,if(('+start+(mboRow_DayStart+nextRow)+'-offset('+end+(mboRow_DayStart+nextRow)+',-1,0))*24>=0,('+start+(mboRow_DayStart+nextRow)+'-offset('+end+(mboRow_DayStart+nextRow)+',-1,0))*24,"NG"),"-"),"-")');
+                .setFormula('=iferror(if($'+status+(mboRow_DayStart+nextRow)+'=TRUE,if((('+start+(mboRow_DayStart+nextRow)+'+'+ymd+(mboRow_DayStart+nextRow)+')-(offset('+end+(mboRow_DayStart+nextRow)+',-1,0)+offset('+ymd+(mboRow_DayStart+nextRow)+',-1,0)))*24>=0,(('+start+(mboRow_DayStart+nextRow)+'+'+ymd+(mboRow_DayStart+nextRow)+')-(offset('+end+(mboRow_DayStart+nextRow)+',-1,0)+offset('+ymd+(mboRow_DayStart+nextRow)+',-1,0)))*24,"NG"),"-"),"-")');
             // 5つ目（6列分：WFLEOZ実績）
             mboSheet.getRange(mboRow_DayStart+nextRow,mboCol_DataFormula+4,Number(mmDays[i]),6)
                 .setFormula('=if($'+status+(mboRow_DayStart+nextRow)+'=TRUE,sumifs(\''+mm+'\'!$G:$G,\''+mm+'\'!$V:$V,$'+ymd8+(mboRow_DayStart+nextRow)+',\''+mm+'\'!$H:$H,mid('+wfl+'$2,1,1)),"-")');
